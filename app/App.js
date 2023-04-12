@@ -1,11 +1,17 @@
 import React from 'react';
-import {StyleSheet, Text, View} from 'react-native';
+import {Provider as PaperProvider} from 'react-native-paper';
+import {SafeAreaView, StyleSheet} from 'react-native';
+import theme from './util/theme';
+import AppStack from './navigation/app-stack';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.text}>WORD BANK</Text>
-    </View>
+    // Wrap your app in the Store component
+    <PaperProvider theme={theme}>
+      <SafeAreaView style={styles.container}>
+        <AppStack />
+      </SafeAreaView>
+    </PaperProvider>
   );
 }
 
@@ -13,11 +19,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  text: {
-    fontSize: 20,
-    fontWeight: 'bold',
   },
 });
