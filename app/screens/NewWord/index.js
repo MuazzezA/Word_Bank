@@ -1,10 +1,10 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-export const WordListScreen = () => {
+export const NewWordScreen = () => {
   return (
     <View>
-      <Text>WordList Screen</Text>
+      <Text>New Word Screen</Text>
     </View>
   );
 };
