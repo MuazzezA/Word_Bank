@@ -1,13 +1,13 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import HomeStack from './home-stack';
 import AuthStack from './auth-stack';
+import BottomNav from './bottom-nav';
 
 const Stack = createNativeStackNavigator();
 
 export default AppStack = () => {
-  const isAuth = false;
+  const isAuth = true;
   // dont forget splash screen
   return (
     <NavigationContainer>
@@ -16,11 +16,7 @@ export default AppStack = () => {
           headerShown: false,
         }}>
         {isAuth ? (
-          <>
-            <Stack.Screen name="home-stack" component={HomeStack} />
-            <Stack.Screen name="word-stack" component={HomeStack} />
-            <Stack.Screen name="profile-stack" component={HomeStack} />
-          </>
+          <Stack.Screen name="bottom-tabs" component={BottomNav} />
         ) : (
           <Stack.Screen name="auth-stack" component={AuthStack} />
         )}
